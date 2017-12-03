@@ -12,12 +12,12 @@ import SETTINGS
 class Main(object):
 
     def __init__(self):
+        self.time = Time()
         self.curve = Curve()
-        self.logs = Logs()
+        self.logs = Logs(time)
         self.security = SecuritySensors()
         self.resistors = Resistors()
         self.temperature = Temperature()
-        self.time = Time()
 
     def begin(self):
         pass
