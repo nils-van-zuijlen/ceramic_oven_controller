@@ -1,7 +1,7 @@
 # -*- coding=UTF-8 -*-
 
 # The log file's path
-LOG_PATH = "/some/path/to/a/file.log"
+LOG_PATH = "logs.log"
 
 # A reasonnable temperature to allow the oven to be opened
 REASONABLE_TEMPERATURE = 200
