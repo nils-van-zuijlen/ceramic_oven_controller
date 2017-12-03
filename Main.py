@@ -13,7 +13,7 @@ class Main(object):
 
     def __init__(self):
         self.time = Time()
-        self.curve = Curve()
+        self.curve = Curve(time)
         self.logs = Logs(time)
         self.security = SecuritySensors()
         self.resistors = Resistors()

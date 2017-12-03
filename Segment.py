@@ -1,7 +1,7 @@
 # -*- coding=UTF-8 -*-
 import SETTINGS
 
-class Segment(object):
+class Segment:
 
     def __init__(self, begin, end, temp_at_begin, growing_coeff):
         assert begin < end
@@ -10,7 +10,7 @@ class Segment(object):
         self.growing_coeff = float(growing_coeff)
         self.temp_at_origin = float(temp_at_begin - (self.begin * self.growing_coeff))
 
-    def temperature_now(self, time):
+    def temperature_at(self, time):
         assert self.is_in_time_range(time)
         return time * self.growing_coeff + self.temp_at_origin
 
@@ -24,7 +24,7 @@ def test_segment():
         assert not segment.is_in_time_range(0)
         assert not segment.is_in_time_range(11)
         assert segment.temp_at_origin == 18
-        assert segment.temperature_now(8) == 34
+        assert segment.temperature_at(8) == 34
     except Exception as e:
         return False
     else:

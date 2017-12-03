@@ -1,7 +1,7 @@
 # -*- coding=UTF-8 -*-
 import SETTINGS
 
-class LogEntry(object):
+class LogEntry:
 
     def __init__(self, time, event, value):
         self.time = time
