@@ -1,4 +1,4 @@
-# -*- coding=UTF-8 -*-
+# -*- coding: utf-8 -*-
 from LogEntry import LogEntry
 import SETTINGS
 
@@ -72,7 +72,7 @@ def test_logs():
         assert logs.logs[0].value["state"] == True
         with open("test_logs.log", "r") as test_logs:
             content = test_logs.read()
-            assert content == "[250] Security: {'state': True, 'sensor': 'door'}\n"
+            assert content == "[250] Security: {'state': True, 'sensor': 'door'}\n" or content == "[250] Security: {'sensor': 'door', 'state': True}\n"
         with open("test_logs.log", "w"):
             pass
         del logs.logs[0]
