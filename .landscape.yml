@@ -1,0 +1,8 @@
+requirements:
+  - requirements_dev.txt
+  - requirements_prod.txt
+python-targets:
+  - 3
+pep8:
+  full: true
+strictness: veryhigh
