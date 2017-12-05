@@ -30,6 +30,7 @@ class Logs:
         with open(self._log_path, "a") as log_file:
             log_file.write("[{}] {}: {}\n".format(time, event, state))
 
+
 def test_logs():
     try:
         class MockTime:

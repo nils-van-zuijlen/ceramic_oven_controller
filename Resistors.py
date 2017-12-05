@@ -1,7 +1,7 @@
 # -*- coding=UTF-8 -*-
-import SETTINGS
 
-class Resistors(object):
+
+class Resistors:
 
     ON = True
     OFF = False
@@ -11,13 +11,18 @@ class Resistors(object):
         self.security_mode_enabled = False
 
     def on(self):
-        pass
+        assert not self.security_mode_enabled
+        #do sthg
 
     def off(self):
         pass
 
     def set(self, state):
-        pass
+        if state:
+            self.on()
+        else:
+            self.off()
 
     def security_mode(self):
-        pass
+        self.security_mode_enabled = True
+        self.off()

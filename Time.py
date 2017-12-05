@@ -1,5 +1,4 @@
 # -*- coding=UTF-8 -*-
-import SETTINGS
 from time import time as libtime
 from math import ceil
 
@@ -38,7 +37,7 @@ def test_time():
         assert tested_time.now() == 10
         time_now = 1
         assert tested_time.now() == 11
-    except Exception as e:
+    except Exception:
         return False
     else:
         return True

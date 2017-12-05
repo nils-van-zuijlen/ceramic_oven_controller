@@ -1,12 +1,14 @@
 # -*- coding=UTF-8 -*-
-import SETTINGS
+import threading
 
-class SecuritySensors(object):
+
+class SecuritySensors(threading.Thread):
 
     def __init__(self):
         self.door_state = True
         self.emergency_button_state = True
         self.is_triggered = True
+        threading.Thread.__init__(self)
 
     def check_state(self):
         pass

@@ -6,15 +6,14 @@ from SecuritySensors import SecuritySensors
 from Resistors import Resistors
 from Temperature import Temperature
 from Time import Time
-import SETTINGS
 
 
-class Main(object):
+class Main:
 
     def __init__(self):
         self.time = Time()
-        self.curve = Curve(time)
-        self.logs = Logs(time)
+        self.curve = Curve(self.time)
+        self.logs = Logs(self.time)
         self.security = SecuritySensors()
         self.resistors = Resistors()
         self.temperature = Temperature()
