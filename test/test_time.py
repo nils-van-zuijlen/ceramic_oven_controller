@@ -1,25 +1,32 @@
 # -*- coding: utf-8 -*-
-from Time import Time
+from time import time
+from time import sleep
+from math import ceil
 
 
-def test_time():
-    global libtime
-    def mocktime():
-        return time_now
-    time_now = 0
-    libtime = mocktime
+from ..Time import Time
+
+def official_time():
+    return ceil(time())
+
+def test_origin():
     tested_time = Time()
-    assert tested_time.now() == 0
-    time_now = 1
-    assert tested_time.now() == 1
-    tested_time.reset()
-    assert tested_time.now() == 0
-    time_now = 0
-    assert tested_time.now() == -1
-    tested_time.set(10)
-    assert tested_time.now() == 10
-    time_now = 1
-    assert tested_time.now() == 11
+    assert tested_time.now() == official_time()
+    sleep(5)
+    assert tested_time.now() == official_time()
 
-if __name__ == '__main__':
-    test_time()
+def test_reset():
+    tested_time = Time()
+    tested_time.reset()
+    reset = official_time()
+    assert tested_time.now() == 0
+    sleep(5)
+    assert tested_time.now() == official_time() - reset
+
+def test_set():
+    tested_time = Time()
+    tested_time.set(10)
+    reset = official_time() - 10
+    assert tested_time.now() == 10
+    sleep(5)
+    assert tested_time.now() == official_time() - reset

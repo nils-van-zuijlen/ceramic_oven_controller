@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from .LogEntry import LogEntry
-from .Logs import Logs
-import SETTINGS
+from ..LogEntry import LogEntry
+from ..Logs import Logs
 
 
 class MockTime:
@@ -49,7 +48,7 @@ def test_log_security():
     assert logs.logs[0].time == 250
     assert logs.logs[0].event == "Security"
     assert logs.logs[0].value["sensor"] == "door"
-    assert logs.logs[0].value["state"] == True
+    assert logs.logs[0].value["state"] is True
     with open("test_logs.log", "r") as test_logs:
         content = test_logs.read()
         assert content == "[250] Security: {'state': True, 'sensor': 'door'}\n" or content == "[250] Security: {'sensor': 'door', 'state': True}\n"

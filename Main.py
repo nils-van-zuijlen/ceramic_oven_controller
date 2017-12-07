@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 # -*- coding=UTF-8 -*-
-from Curve import Curve
-from Logs import Logs
-from SecuritySensors import SecuritySensors
-from Resistors import Resistors
-from Temperature import Temperature
-from Time import Time
-import SETTINGS
+from .Curve import Curve
+from .Logs import Logs
+from .SecuritySensors import SecuritySensors
+from .Resistors import Resistors
+from .Temperature import Temperature
+from .Time import Time
+from . import SETTINGS
 
 
 class Main(object):

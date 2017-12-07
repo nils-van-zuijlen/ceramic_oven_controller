@@ -1,12 +1,11 @@
 # -*- coding:utf-8 -*-
-from .Segment import Segment
-from .Curve import Curve
-import SETTINGS
+from ..Segment import Segment
+from ..Curve import Curve
 
 def test_curve():
     class MockTime:
-	def now(self):
-	    return self.time
+        def now(self):
+            return self.time
     time = MockTime()
     time.time = 5
     curve = Curve(time)

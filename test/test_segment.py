@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-import SETTINGS
-from .Segment import Segment
+from ..Segment import Segment
 
 
 def test_segment():

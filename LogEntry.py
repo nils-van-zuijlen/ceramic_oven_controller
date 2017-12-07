@@ -1,5 +1,5 @@
 # -*- coding=UTF-8 -*-
-import SETTINGS
+from . import SETTINGS
 
 class LogEntry:
 
