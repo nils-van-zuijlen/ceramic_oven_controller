@@ -1,5 +1,5 @@
 # -*- coding=UTF-8 -*-
-from . import SETTINGS
+
 
 class Segment:
 

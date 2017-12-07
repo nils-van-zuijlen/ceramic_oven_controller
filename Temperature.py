@@ -1,7 +1,8 @@
 # -*- coding=UTF-8 -*-
 from . import SETTINGS
 
-class Temperature(object):
+
+class Temperature:
 
     REASONABLE = SETTINGS.REASONABLE_TEMPERATURE
     MINIMUM = SETTINGS.MINIMUM_TEMPERATURE
@@ -14,4 +15,5 @@ class Temperature(object):
         pass
 
     def is_reasonable(self):
-        pass
+        current = self.current()
+        return current <= Temperature.REASONABLE

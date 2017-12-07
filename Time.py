@@ -1,5 +1,4 @@
 # -*- coding=UTF-8 -*-
-from . import SETTINGS
 from time import time as libtime
 from math import ceil
 

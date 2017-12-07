@@ -1,5 +1,4 @@
-# -*- coding=UTF-8 -*-
-from . import SETTINGS
+# -*- coding:UTF-8 -*-
 
 class LogEntry:
 

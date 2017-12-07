@@ -1,6 +1,6 @@
-# -*- coding=UTF-8 -*-
+# -*- coding:UTF-8 -*-
 from .Segment import Segment
-from . import SETTINGS
+
 
 
 class Curve:
@@ -17,7 +17,7 @@ class Curve:
             assert self._segments[-1].end >= now
             i = 0
             while not self._segments[i].is_in_time_range(now):
-                i+=1
+                i += 1
             self._current_segment = i
 
     def get_temperature(self):
@@ -29,7 +29,7 @@ class Curve:
         return self._segments[self._current_segment]
 
     def add_segment(self, segment):
-        assert type(segment) is Segment
+        assert isinstance(segment, Segment)
         if len(self._segments) != 0:
             assert segment.begin == self._segments[-1].end
             assert segment.temperature_at(segment.begin) == self._segments[-1].temperature_at(self._segments[-1].end)

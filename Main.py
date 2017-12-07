@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding=UTF-8 -*-
+# -*- coding:utf-8 -*-
 from .Curve import Curve
 from .Logs import Logs
 from .SecuritySensors import SecuritySensors
@@ -9,12 +9,12 @@ from .Time import Time
 from . import SETTINGS
 
 
-class Main(object):
+class Main:
 
     def __init__(self):
         self.time = Time()
-        self.curve = Curve(time)
-        self.logs = Logs(time)
+        self.curve = Curve(self.time)
+        self.logs = Logs(self.time)
         self.security = SecuritySensors()
         self.resistors = Resistors()
         self.temperature = Temperature()
