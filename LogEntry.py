@@ -1,5 +1,6 @@
 # -*- coding:UTF-8 -*-
 
+
 class LogEntry:
 
     def __init__(self, time, event, value):

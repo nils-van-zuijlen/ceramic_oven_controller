@@ -6,7 +6,6 @@ from .SecuritySensors import SecuritySensors
 from .Resistors import Resistors
 from .Temperature import Temperature
 from .Time import Time
-from . import SETTINGS
 
 
 class Main:

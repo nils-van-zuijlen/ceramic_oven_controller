@@ -6,14 +6,17 @@ from math import ceil
 
 from ..Time import Time
 
+
 def official_time():
     return ceil(time())
+
 
 def test_origin():
     tested_time = Time()
     assert tested_time.now() == official_time()
     sleep(5)
     assert tested_time.now() == official_time()
+
 
 def test_reset():
     tested_time = Time()
@@ -22,6 +25,7 @@ def test_reset():
     assert tested_time.now() == 0
     sleep(5)
     assert tested_time.now() == official_time() - reset
+
 
 def test_set():
     tested_time = Time()

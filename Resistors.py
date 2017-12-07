@@ -12,7 +12,7 @@ class Resistors:
 
     def on(self):
         assert not self.security_mode_enabled
-        #do sthg
+        # do sthg
 
     def off(self):
         pass

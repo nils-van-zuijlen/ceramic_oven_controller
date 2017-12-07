@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from ..LogEntry import LogEntry
 from ..Logs import Logs
 
 
 class MockTime:
     def now(self):
         return self.time
+
 
 def test_log_main():
     time = MockTime()
@@ -23,6 +23,7 @@ def test_log_main():
         pass
     del logs.logs[0]
 
+
 def test_log_temperature():
     time = MockTime()
     logs = Logs(time)
@@ -39,6 +40,7 @@ def test_log_temperature():
         pass
     del logs.logs[0]
 
+
 def test_log_security():
     time = MockTime()
     logs = Logs(time)
@@ -51,7 +53,8 @@ def test_log_security():
     assert logs.logs[0].value["state"] is True
     with open("test_logs.log", "r") as test_logs:
         content = test_logs.read()
-        assert content == "[250] Security: {'state': True, 'sensor': 'door'}\n" or content == "[250] Security: {'sensor': 'door', 'state': True}\n"
+        assert content == "[250] Security: {'state': True, 'sensor': 'door'}\n"\
+            or content == "[250] Security: {'sensor': 'door', 'state': True}\n"
     with open("test_logs.log", "w"):
         pass
     del logs.logs[0]

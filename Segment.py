@@ -8,7 +8,8 @@ class Segment:
         self.begin = int(begin)
         self.end = int(end)
         self.growing_coeff = float(growing_coeff)
-        self.temp_at_origin = float(temp_at_begin - (self.begin * self.growing_coeff))
+        self.temp_at_origin = float(temp_at_begin - 
+            (self.begin * self.growing_coeff))
 
     def temperature_at(self, time):
         assert self.is_in_time_range(time)

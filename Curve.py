@@ -2,7 +2,6 @@
 from .Segment import Segment
 
 
-
 class Curve:
 
     def __init__(self, time):
@@ -12,7 +11,8 @@ class Curve:
 
     def _update_current(self):
         assert len(self._segments) != 0
-        if not self._segments[self._current_segment].is_in_time_range(self.time.now()):
+        if not self._segments[self._current_segment].is_in_time_range( \
+                self.time.now()):
             now = self.time.now()
             assert self._segments[-1].end >= now
             i = 0
@@ -32,7 +32,9 @@ class Curve:
         assert isinstance(segment, Segment)
         if len(self._segments) != 0:
             assert segment.begin == self._segments[-1].end
-            assert segment.temperature_at(segment.begin) == self._segments[-1].temperature_at(self._segments[-1].end)
+            end_temp = self._segments[-1].temperature_at(self._segments[-1].end)
+            begin_temp = segment.temperature_at(segment.begin)
+            assert begin_temp == end_temp
         else:
             assert segment.begin == 0
         self._segments.append(segment)

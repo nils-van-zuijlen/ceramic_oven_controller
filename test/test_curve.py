@@ -2,6 +2,7 @@
 from ..Segment import Segment
 from ..Curve import Curve
 
+
 def test_curve():
     class MockTime:
         def now(self):
