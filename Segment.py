@@ -16,23 +16,3 @@ class Segment:
 
     def is_in_time_range(self, time):
         return time >= self.begin and time <= self.end
-
-def test_segment():
-    try:
-        segment = Segment(6, 10, 30, 2)
-        assert segment.is_in_time_range(7)
-        assert not segment.is_in_time_range(0)
-        assert not segment.is_in_time_range(11)
-        assert segment.temp_at_origin == 18
-        assert segment.temperature_at(8) == 34
-    except Exception:
-        return False
-    else:
-        return True
-
-if __name__ == '__main__':
-    if test_segment():
-        print("Tests on Segment passed succesfully")
-    else:
-        print("Tests on Segment were not successfull, please check above ' + \
-            'to see what happened")
