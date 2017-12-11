@@ -9,4 +9,9 @@ python:
 install:
   - pip3 install -r requirements_dev.txt
   - pip3 install -r requirements_prod.txt
-script: pytest-cov
+  - pip3 install coverage, codacy-coverage
+script:
+  - pytest
+  - coverage xml
+after_script:
+  - python-codacy-coverage -r coverage.xml
