@@ -13,6 +13,6 @@ install:
 script:
   - pytest
 after_script:
-  - coverage run
+  - coverage run test/*
   - coverage xml
   - python-codacy-coverage -r coverage.xml
