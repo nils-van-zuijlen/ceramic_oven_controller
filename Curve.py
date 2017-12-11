@@ -8,7 +8,7 @@ from .Segment import Segment
 class Curve:
     """
     The temperature curve
-    
+
     Stores Segments and fetches the current wanted temperature in them
     """
     def __init__(self, time):
