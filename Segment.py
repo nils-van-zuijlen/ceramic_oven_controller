@@ -14,7 +14,7 @@ class Segment:
     def temperature_at(self, time):
         """
         Gives the temperature at given `time`
-        
+
         Raises AssertionError if `time` is not in the Segment's range
         """
         assert self.is_in_time_range(time)
