@@ -1,4 +1,9 @@
-# -*- coding=UTF-8 -*-
+# -*- coding: utf-8 -*-
+"""
+You will have to set your custom settings here
+
+Some of the values must be adapted to your needs
+"""
 
 # The log file's path
 LOG_PATH = "logs.log"
